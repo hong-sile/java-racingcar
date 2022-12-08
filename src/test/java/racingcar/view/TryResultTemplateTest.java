@@ -6,7 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import racingcar.model.Cars;
 
-class MoveResultTemplateTest {
+class TryResultTemplateTest {
 
     @Test
     void buildTemplate_메소드는_CarsDto를_출력형식에_맞게_변환한다() {
@@ -19,8 +19,8 @@ class MoveResultTemplateTest {
             expectedStringBuilder.append(" : \n");
         }
         //when
-        MoveResultTemplate moveResultTemplate = new MoveResultTemplate(cars.toDto());
+        TryResultTemplate tryResultTemplate = new TryResultTemplate(cars.toDto());
         //then
-        Assertions.assertThat(moveResultTemplate.buildTemplate()).isEqualTo(expectedStringBuilder.toString());
+        Assertions.assertThat(tryResultTemplate.buildTemplate()).isEqualTo(expectedStringBuilder.toString());
     }
 }

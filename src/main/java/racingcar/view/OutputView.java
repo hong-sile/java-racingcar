@@ -8,7 +8,7 @@ public class OutputView {
     private static final String WINNERS_DELIMITER = ", ";
 
     public static void printTryResult(CarsDto carsDto) {
-        MoveResultTemplate template = new MoveResultTemplate(carsDto);
+        TryResultTemplate template = new TryResultTemplate(carsDto);
         System.out.println(template.buildTemplate());
     }
 
