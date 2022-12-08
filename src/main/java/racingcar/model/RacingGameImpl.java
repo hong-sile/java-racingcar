@@ -1,6 +1,8 @@
 package racingcar.model;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import racingcar.dto.CarDto;
 import racingcar.dto.CarsDto;
 import racingcar.dto.WinnersDto;
 
@@ -36,6 +38,10 @@ public class RacingGameImpl implements RacingGame {
 
     @Override
     public WinnersDto getWinners() {
-        return null;
+        CarsDto winCars = cars.getWinCars();
+        List<String> winnerNames = winCars.getCars().stream()
+                .map(CarDto::getName)
+                .collect(Collectors.toList());
+        return new WinnersDto(winnerNames);
     }
 }
