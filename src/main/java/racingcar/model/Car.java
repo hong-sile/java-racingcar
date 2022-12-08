@@ -1,5 +1,7 @@
 package racingcar.model;
 
+import racingcar.dto.CarDto;
+
 public class Car {
     private static final int MOVE_CUTLINE_VALUE = 4;
     private static final int MAX_NAME_LENGTH = 5;
@@ -21,5 +23,9 @@ public class Car {
         if (randomValue >= MOVE_CUTLINE_VALUE) {
             position += 1;
         }
+    }
+
+    public CarDto toDto() {
+        return new CarDto(name, position);
     }
 }

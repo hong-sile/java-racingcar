@@ -1,16 +1,12 @@
 package racingcar.dto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CarsDto {
     private final List<CarDto> cars;
 
-    public CarsDto(CarDto... cars) {
-        this.cars = new ArrayList<>();
-        for (CarDto car : cars) {
-            this.cars.add(car);
-        }
+    public CarsDto(List<CarDto> cars) {
+        this.cars = cars;
     }
 
     public List<CarDto> getCars() {

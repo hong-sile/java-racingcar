@@ -30,7 +30,7 @@ public class RacingGameImpl implements RacingGame {
 
     @Override
     public CarsDto getTryResult() {
-        return null;
+        return cars.toDto();
     }
 
     @Override
