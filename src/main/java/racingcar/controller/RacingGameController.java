@@ -1,0 +1,35 @@
+package racingcar.controller;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+import racingcar.model.RacingGame;
+
+public class RacingGameController {
+    RacingGame racingGame;
+
+    public void run() {
+
+    }
+
+    public void initialCars() {
+
+    }
+
+    public <T> void repeat(Consumer<T> inputReader, T value) {
+        try {
+            inputReader.accept(value);
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            repeat(inputReader, value);
+        }
+    }
+
+    public <T> T repeat(Supplier<T> inputReader) {
+        try {
+            return inputReader.get();
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            return repeat(inputReader);
+        }
+    }
+}
