@@ -1,14 +1,14 @@
 package racingcar.controller;
 
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import racingcar.model.RacingGame;
+import racingcar.model.RacingGameImpl;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
 public class RacingGameController {
-    private RacingGame racingGame;
+    private final RacingGame racingGame = new RacingGameImpl();
 
     public void run() {
         initialCars();
@@ -29,30 +29,19 @@ public class RacingGameController {
     }
 
     private void initialCars() {
-        List<String> carNames = repeat(InputView::inputCarNames);
-        repeat(racingGame::initialCars, carNames);
+        repeat(racingGame::initialCars, InputView::inputCarNames);
     }
 
     private void initialTryCount() {
-        int tryCount = repeat(InputView::inputTryCount);
-        repeat(racingGame::initialTryCount, tryCount);
+        repeat(racingGame::initialTryCount, InputView::inputTryCount);
     }
 
-    private <T> void repeat(Consumer<T> inputReader, T value) {
+    private <T> void repeat(Consumer<T> initializer, Supplier<T> inputReader) {
         try {
-            inputReader.accept(value);
+            initializer.accept(inputReader.get());
         } catch (IllegalArgumentException exception) {
             System.out.println(exception.getMessage());
-            repeat(inputReader, value);
-        }
-    }
-
-    private <T> T repeat(Supplier<T> inputReader) {
-        try {
-            return inputReader.get();
-        } catch (IllegalArgumentException exception) {
-            System.out.println(exception.getMessage());
-            return repeat(inputReader);
+            repeat(initializer, inputReader);
         }
     }
 }
