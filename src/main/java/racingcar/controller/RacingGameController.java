@@ -14,6 +14,11 @@ public class RacingGameController {
         initialCars();
         initialTryCount();
         gameStart();
+        gameEnd();
+    }
+
+    private void gameEnd() {
+        OutputView.printWinners(racingGame.getWinners());
     }
 
     private void gameStart() {
