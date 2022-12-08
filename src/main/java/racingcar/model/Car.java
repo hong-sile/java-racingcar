@@ -28,4 +28,12 @@ public class Car {
     public CarDto toDto() {
         return new CarDto(name, position);
     }
+
+    public int maxPosition(int position) {
+        return Math.max(this.position, position);
+    }
+
+    public boolean isEqualPosition(int position) {
+        return position == this.position;
+    }
 }

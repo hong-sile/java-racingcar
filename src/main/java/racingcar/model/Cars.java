@@ -28,4 +28,21 @@ public class Cars {
                 .collect(Collectors.toList());
         return new CarsDto(carDtos);
     }
+
+    public CarsDto getWinCars() {
+        int maxPosition = getCarsMaxPosition();
+        List<CarDto> winCars = cars.stream()
+                .filter(car -> car.isEqualPosition(maxPosition))
+                .map(Car::toDto)
+                .collect(Collectors.toList());
+        return new CarsDto(winCars);
+    }
+
+    private int getCarsMaxPosition() {
+        int maxPosition = -1;
+        for (Car car : cars) {
+            maxPosition = car.maxPosition(maxPosition);
+        }
+        return maxPosition;
+    }
 }
