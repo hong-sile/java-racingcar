@@ -1,7 +1,7 @@
 package racingcar.model;
 
 import java.util.List;
-import racingcar.model.dto.CarsDto;
+import racingcar.dto.CarsDto;
 
 public interface RacingGame {
     public void initialCars(List<String> carNames);
