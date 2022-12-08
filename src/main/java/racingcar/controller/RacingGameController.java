@@ -18,6 +18,11 @@ public class RacingGameController {
         repeat(racingGame::initialCars, carNames);
     }
 
+    public void initialTryCount() {
+        int tryCount = repeat(InputView::inputTryCount);
+        repeat(racingGame::initialTryCount, tryCount);
+    }
+
     public <T> void repeat(Consumer<T> inputReader, T value) {
         try {
             inputReader.accept(value);
