@@ -4,7 +4,7 @@ import java.util.List;
 import racingcar.model.dto.CarsDto;
 
 public interface RacingGame {
-    public void initialCars(List<String> Cars);
+    public void initialCars(List<String> carNames);
 
     public void initialTryCount(int tryCount);
 

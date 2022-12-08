@@ -1,0 +1,39 @@
+package racingcar.model;
+
+import java.util.List;
+import racingcar.model.dto.CarsDto;
+
+public class RacingGameImpl implements RacingGame {
+    private Cars cars;
+    private TryCount tryCount;
+
+    @Override
+    public void initialCars(List<String> carNames) {
+        cars = new Cars(carNames);
+    }
+
+    @Override
+    public void initialTryCount(int tryCount) {
+        
+    }
+
+    @Override
+    public void tryOneTime() {
+
+    }
+
+    @Override
+    public boolean isPlayable() {
+        return false;
+    }
+
+    @Override
+    public CarsDto getTryResult() {
+        return null;
+    }
+
+    @Override
+    public List<String> getWinners() {
+        return null;
+    }
+}
