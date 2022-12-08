@@ -1,12 +1,8 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class Car {
-    private static final int MAX_NAME_LENGTH = 5;
-    private static final int MIN_RANDOM_VALUE = 0;
-    private static final int MAX_RANDOM_VALUE = 9;
     private static final int MOVE_CUTLINE_VALUE = 4;
+    private static final int MAX_NAME_LENGTH = 5;
     private final String name;
     private int position = 0;
 
@@ -21,9 +17,8 @@ public class Car {
         }
     }
 
-    public void moveCar() {
-        //이 랜덤값 뽑는 것을 Car 밖으로 빼야할 것 같음. 추후에 리팩토링
-        if (Randoms.pickNumberInRange(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE) > MOVE_CUTLINE_VALUE) {
+    public void move(int randomValue) {
+        if (randomValue >= MOVE_CUTLINE_VALUE) {
             position += 1;
         }
     }
