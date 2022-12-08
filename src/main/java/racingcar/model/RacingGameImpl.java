@@ -14,7 +14,7 @@ public class RacingGameImpl implements RacingGame {
 
     @Override
     public void initialTryCount(int tryCount) {
-        
+        this.tryCount = new TryCount(tryCount);
     }
 
     @Override
