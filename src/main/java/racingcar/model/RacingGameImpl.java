@@ -25,7 +25,7 @@ public class RacingGameImpl implements RacingGame {
 
     @Override
     public boolean isPlayable() {
-        return false;
+        return tryCount.isPlayable();
     }
 
     @Override
