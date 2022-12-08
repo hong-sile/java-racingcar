@@ -1,18 +1,21 @@
 package racingcar.controller;
 
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import racingcar.model.RacingGame;
+import racingcar.view.InputView;
 
 public class RacingGameController {
-    RacingGame racingGame;
+    private RacingGame racingGame;
 
     public void run() {
 
     }
 
     public void initialCars() {
-
+        List<String> carNames = repeat(InputView::inputCarNames);
+        repeat(racingGame::initialCars, carNames);
     }
 
     public <T> void repeat(Consumer<T> inputReader, T value) {
