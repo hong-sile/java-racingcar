@@ -2,6 +2,7 @@ package racingcar.model;
 
 import java.util.List;
 import racingcar.dto.CarsDto;
+import racingcar.dto.WinnersDto;
 
 public class RacingGameImpl implements RacingGame {
     private Cars cars;
@@ -34,7 +35,7 @@ public class RacingGameImpl implements RacingGame {
     }
 
     @Override
-    public List<String> getWinners() {
+    public WinnersDto getWinners() {
         return null;
     }
 }

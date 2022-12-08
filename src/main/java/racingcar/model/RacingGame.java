@@ -2,6 +2,7 @@ package racingcar.model;
 
 import java.util.List;
 import racingcar.dto.CarsDto;
+import racingcar.dto.WinnersDto;
 
 public interface RacingGame {
     public void initialCars(List<String> carNames);
@@ -14,5 +15,5 @@ public interface RacingGame {
 
     public CarsDto getTryResult();
 
-    public List<String> getWinners();
+    public WinnersDto getWinners();
 }
