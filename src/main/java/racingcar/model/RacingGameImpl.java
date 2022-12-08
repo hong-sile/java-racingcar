@@ -19,7 +19,8 @@ public class RacingGameImpl implements RacingGame {
 
     @Override
     public void tryOneTime() {
-
+        cars.moveCars();
+        tryCount.decrease();
     }
 
     @Override
