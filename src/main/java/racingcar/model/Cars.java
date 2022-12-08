@@ -12,4 +12,10 @@ public class Cars {
             cars.add(new Car(carName));
         }
     }
+
+    public void moveCars() {
+        for (Car car : cars) {
+            car.move(RandomNumberGenerator.generate());
+        }
+    }
 }
