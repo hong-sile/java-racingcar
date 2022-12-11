@@ -50,4 +50,10 @@ class CarTest {
         Assertions.assertThat(car.isEqualPosition(1)).isFalse();
         Assertions.assertThat(car.isEqualPosition(2)).isTrue();
     }
+
+    @Test
+    void 자동차의_이름이_5가_넘을_때_IllegalArgumentException반환() {
+        Assertions.assertThatThrownBy(() -> new Car("rkskekfk"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
